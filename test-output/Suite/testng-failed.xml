@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.NewSeleniumLearning.TestCases.LoginPageTest">
+      <class name="com.NewSeleniumLearning.TestCases.LastPageTest">
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="invalid_User_Test"/>
+          <include name="validate_To_E2E_Test"/>
         </methods>
-      </class> <!-- com.NewSeleniumLearning.TestCases.LoginPageTest -->
+      </class> <!-- com.NewSeleniumLearning.TestCases.LastPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

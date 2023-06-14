@@ -1,7 +1,11 @@
 package com.NewSeleniumLearning.TestCases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.NewSeleniumLearning.AbstractClasses.AbstractMethod;
@@ -11,6 +15,7 @@ import com.NewSeleniumLearning.PageObjects.CheckOutPage;
 import com.NewSeleniumLearning.PageObjects.CheckOutPage2;
 import com.NewSeleniumLearning.PageObjects.HomePage;
 import com.NewSeleniumLearning.PageObjects.LastPage;
+import com.NewSeleniumLearning.PageObjects.LoginPage;
 import com.NewSeleniumLearning.Utilities.Logs;
 import com.NewSeleniumLearning.Utilities.Retry;
 
@@ -21,11 +26,12 @@ public class LastPageTest extends BaseTest {
 	CheckOutPage cop;
 	CheckOutPage2 cop2;
 	LastPage lap;
+	LoginPage lp;
 
-	@Test(retryAnalyzer = Retry.class,groups = "E2E")
+	@Test(retryAnalyzer = Retry.class, groups = "E2E")
 	public void validate_To_E2E_Test() {
 		Logs.startTestCase("validate_To_E2E_Test");
-		Reporter.log("validate_To_E2E_Test");
+		lp = pm.getloginPage();
 		String prodName = "Sauce Labs Onesie";
 		lp.enter_UserName(prop.getProperty("username"));
 		Reporter.log("Username is enetered successfully");
@@ -33,7 +39,7 @@ public class LastPageTest extends BaseTest {
 		Reporter.log("Password enetered successfully");
 		lp.clk_Login();
 		Reporter.log("Login happened successfully");
-		hp = new HomePage(driver);
+		hp = pm.getHomePage();
 		hp.clk_ADDTOCart(prodName);
 		acp = hp.navigate_To_CartPage();
 		Assert.assertEquals(acp.get_Name_Of_Item_Added(), prodName);
@@ -50,5 +56,7 @@ public class LastPageTest extends BaseTest {
 		Logs.endTestCase("validate_To_E2E_Test");
 		Reporter.log("Test case ended here");
 	}
+
+	
 
 }

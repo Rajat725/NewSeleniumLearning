@@ -7,11 +7,12 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.NewSeleniumLearning.TestCases.LoginPageTest"/>
-      <class name="com.NewSeleniumLearning.TestCases.HomePageTest"/>
       <class name="com.NewSeleniumLearning.TestCases.AddToCartPageTest"/>
-      <class name="com.NewSeleniumLearning.TestCases.CheckOutPageTest"/>
-      <class name="com.NewSeleniumLearning.TestCases.CheckOutPageTest2"/>
       <class name="com.NewSeleniumLearning.TestCases.LastPageTest"/>
+      <class name="com.NewSeleniumLearning.TestCases.CheckOutPageTest"/>
+      <class name="com.NewSeleniumLearning.Base.BaseTest"/>
+      <class name="com.NewSeleniumLearning.TestCases.HomePageTest"/>
+      <class name="com.NewSeleniumLearning.TestCases.CheckOutPageTest2"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

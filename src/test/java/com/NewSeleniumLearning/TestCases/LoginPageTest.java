@@ -1,11 +1,14 @@
 package com.NewSeleniumLearning.TestCases;
 
+import java.io.IOException;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.NewSeleniumLearning.AbstractClasses.AbstractMethod;
@@ -20,25 +23,17 @@ import com.github.javafaker.Name;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginPageTest extends BaseTest {
-	//Base Comment
-	
-	
-	@Test
-	public void dummnyTest()
-	{
-		System.out.println(lp.foter.getPassword());
-		
-	}
+	// Base Comment
+
+	public LoginPage lp;
 
 	@Test(groups = "Smoke")
 	public void invalid_User_Test() {
-		
-	
-		
 
 		// System.out.println(AbstractMethod.fakeUsername());
 		// System.out.println(AbstractMethod.fakePassword());
 		Logs.startTestCase("invalid_User_Test");
+		lp = pm.getloginPage();
 		lp.enter_UserName(AbstractMethod.fakeUsername());
 		lp.enter_Password(AbstractMethod.fakePassword());
 		lp.clk_Login();
@@ -50,12 +45,13 @@ public class LoginPageTest extends BaseTest {
 	@Test(groups = "Smoke")
 	public void valid_User_Test() {
 		Logs.startTestCase("valid_User_Test");
+		lp = pm.getloginPage();
 		lp.enter_UserName(prop.getProperty("username"));
-		//Logs.info("Username entered successfully");
+		// Logs.info("Username entered successfully");
 		lp.enter_Password(prop.getProperty("password"));
-		//Logs.info("Password entered successfully");
+		// Logs.info("Password entered successfully");
 		lp.clk_Login();
-		//Logs.info("Login happened successfully");
+		// Logs.info("Login happened successfully");
 		Logs.endTestCase("valid_User_Test");
 
 	}
@@ -64,6 +60,7 @@ public class LoginPageTest extends BaseTest {
 	public void invalid_User_Test_ExternalData(Map<String, String> l) {
 
 		Logs.startTestCase("invalid_User_Test_ExternalData");
+		lp = pm.getloginPage();
 		// System.out.println(AbstractMethod.fakeUsername());
 		// System.out.println(AbstractMethod.fakePassword());
 		lp.enter_UserName(l.get("username"));
@@ -73,5 +70,7 @@ public class LoginPageTest extends BaseTest {
 				"Epic sadface: Username and password do not match any user in this service");
 		Logs.endTestCase("invalid_User_Test_ExternalData");
 	}
+	
+
 
 }

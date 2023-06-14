@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="invalid_User_Test"/>
+          <include name="dummnyTest"/>
         </methods>
       </class> <!-- com.NewSeleniumLearning.TestCases.LoginPageTest -->
     </classes>

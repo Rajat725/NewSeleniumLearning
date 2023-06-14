@@ -4,7 +4,7 @@
 <listeners>
 <listener class-name="com.NewSeleniumLearning.Utilities.Listener"></listener>
 </listeners>
-  <test thread-count="5" name="Test">
+  <test  name="Test">
   <groups>
    <run>
     <include name="Sanity"></include>
