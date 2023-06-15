@@ -17,8 +17,7 @@ public class LastPage extends AbstractMethod {
 		PageFactory.initElements(driver, this);
 
 	}
-	
-//Error: Postal Code is required
+
 	
 	@FindBy(css=".complete-header")
 	WebElement lbl_SuccessMssg;
