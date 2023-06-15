@@ -40,8 +40,6 @@ public class BaseTest {
 
 		prop.load(fis);
 
-		// String browserName = prop.getProperty("browser");
-
 		String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
 				: prop.getProperty("browser");
 
@@ -65,10 +63,9 @@ public class BaseTest {
 		driver.manage().timeouts()
 				.pageLoadTimeout(Duration.ofSeconds(Integer.parseInt(prop.getProperty("pagLoadTimeOut"))));
 		driver.manage().window().maximize();
-		// driver.get(prop.getProperty("url"));
 		driver.get(Constants.URL);
 		pm = new PageManager(driver);
-		//return driver;
+		// return driver;
 
 	}
 
@@ -85,7 +82,7 @@ public class BaseTest {
 
 	@BeforeMethod(alwaysRun = true)
 	public void setUp() throws IOException {
-		//driver = initialization();
+		// driver = initialization();
 		initialization();
 		driver.manage().deleteAllCookies();
 		// lp = pm.getloginPage();

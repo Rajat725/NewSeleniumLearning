@@ -18,7 +18,7 @@ public class CheckOutPage2 extends AbstractMethod {
 
 	}
 	
-//Error: Postal Code is required
+
 	
 	@FindBy(id="finish")
 	WebElement btn_Finish;
